@@ -1,1 +1,4 @@
-date,description,income,expense
+date,time,description,amount
+20/05/2025,15:00,frais inscription cmc,50
+20/05/2025,15:00,frais inscription cmc,-60
+20/05/2025,15:00,frais inscription cmc,100.05
