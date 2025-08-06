@@ -1,4 +1,12 @@
 date,time,description,amount
-20/05/2025,15:00,frais inscription cmc,50
-20/05/2025,15:00,frais inscription cmc,-60
-20/05/2025,15:00,frais inscription cmc,100.05
+2025/08/06,16:38,"i buy a pizza",-100
+2025/08/23,20:46,taxi,50.24
+2025/08/06,16:47,"i buy a pizza","200,00"
+2025/08/06,16:47,"i buy a pizza",200
+2025/08/31,20:59,"i buy a snickers",-400
+2025/08/03,18:00,"I ate in macdo",-50
+2025/08/16,20:00,taxi,40.25
+2025/08/06,17:10,"i buy a pizza",-100
+2025/08/06,17:11,"i buy a snickers",-522.26
+2025/08/06,17:12,taxi,100.25
+2025/08/06,17:14,"i buy a Tacos",-500.47

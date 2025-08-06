@@ -41,14 +41,40 @@ function calculateTotalsAndBalance($transactions) : array{
     ];
 
     foreach ($transactions as $transaction) {
-        $calculations['balance'] += $transaction['amount'];
+        $calculations['balance'] += round($transaction['amount'], 2);
 
         if ($transaction['amount'] >= 0) {
-            $calculations['totalIncome'] += $transaction['amount'];
+            $calculations['totalIncome'] += round($transaction['amount'], 2);
         } else {
-            $calculations['totalExpenses'] += $transaction['amount'];
+            $calculations['totalExpenses'] += round($transaction['amount'], 2);
         }
     }
 
     return $calculations;
+}
+
+function formatTransaction(array $postTransaction) : array {
+    $formattedTransaction = [];
+
+    /// format date and time
+    $formattedTransaction['date'] = str_replace('-', '/', substr($postTransaction['date-time'], 0, 10));
+    $formattedTransaction['time'] = substr($postTransaction['date-time'], -5);
+    
+    // format description
+    $formattedTransaction['description'] = $postTransaction['description'];
+
+    // format amount
+    if (strcmp($postTransaction['transaction-type'], 'expense')) {
+        $formattedTransaction['amount'] =  floatval($postTransaction['amount']);
+    } elseif (strcmp($postTransaction['transaction-type'], 'income')) {
+        $formattedTransaction['amount'] = -floatval($postTransaction['amount']);
+    }
+
+    return $formattedTransaction;
+}
+
+function storeTransaction(array $transaction, string $db_file) {
+    $file = fopen($db_file, 'a');
+    fputcsv($file, $transaction);
+    fclose($file);
 }
