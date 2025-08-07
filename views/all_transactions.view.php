@@ -2,16 +2,17 @@
 <html lang="en">
 
 <head>
-    <title>All Transactions</title>
+    <link rel="stylesheet" href="views/styles/all_style.css">
+    <title>All transactions</title>
 </head>
 
 <body>
-    <header>
+    <div class="container">
 
-    </header>
-    <main>
-        <section>
-            <table border="1">
+        <?php require(VIEWS_PATH . 'partials/header.php') ?>
+    
+        <main>
+            <table>
                 <thead>
                     <tr>
                         <th>Date</td>
@@ -26,37 +27,50 @@
                             <td><?= $transaction['date'] . ' ' . $transaction['time']?></td>
                             <td><?= $transaction['description'] ?></td>
                             <?php if ($transaction['amount'] >= 0) :?>
-                                <td style="color: green"><?= number_format($transaction['amount'], 2, '.', ',') ?></td>
+                                <td>
+                                    <div style="color: green">
+                                        <?= number_format($transaction['amount'], 2, '.', ',') ?> DH
+                                    </div>
+                                </td>
                                 <td></td>
                             <?php else : ?>
                                 <td></td>
-                                <td style="color: red"><?= number_format($transaction['amount'], 2, '.', ',') ?></td>
+                                <td>
+                                    <div style="color: red">
+                                        <?= number_format($transaction['amount'], 2, '.', ',') ?> DH
+                                    </div>
+                                </td>
                             <?php endif ?>
                         </tr>
                     <?php endforeach?>
                 </tbody>
             </table>
-        </section>
+        </main>
+    
         <aside>
-            <div class="balance">
-                <h2>Balance : <span><?= number_format($calculations['balance'], 2, '.', ',') ?> DH</span></h2>
-            </div>
             <div class="total-income">
-                <h2>Total Income : <span><?= number_format($calculations['totalIncome'], 2, '.', ',') ?> DH</span></h2>
+                <p>Total Income :</p>
+                <span><?= number_format($calculations['totalIncome'], 2, '.', ',') ?> DH</span>
             </div>
+            
             <div class="total-expenses">
-                <h2>Total Expenses : <span><?= number_format($calculations['totalExpenses'], 2, '.', ',') ?> DH</span></h2>
+                <p>Total Expenses :</p>
+                <span><?= number_format($calculations['totalExpenses'], 2, '.', ',') ?> DH</span>
             </div>
-            <div class="add-transaction-button">
+            
+            <div class="balance">
+                <p>Balance :</p>
+                <span><?= number_format($calculations['balance'], 2, '.', ',') ?> DH</span>
+            </div>
+            
+            <div class="sidebar-button">
                 <a href="./add_transaction.php">
-                    Add Transaction
+                    Add transaction
                 </a>
             </div>
         </aside>
-    </main>
-    <footer>
-
-    </footer>
+    
+        <?php require(VIEWS_PATH . 'partials/footer.php') ?>
+    </div>
 </body>
-
 </html>

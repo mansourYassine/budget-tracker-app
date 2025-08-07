@@ -18,4 +18,11 @@ foreach ($files as $file) {
 
 $calculations = calculateTotalsAndBalance($transactions);
 
+$titleName = 'All Transactions';
+$sideBarButtonPageName = [
+    'class' => 'add-transaction',
+    'path' => 'add_transaction',
+    'title' => 'Add Transaction'
+];
+
 require VIEWS_PATH . 'all_transactions.view.php';
