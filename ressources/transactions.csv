@@ -1,15 +1,3 @@
-date,time,description,amount
-2025/08/06,16:38,"i buy a pizza",-100
-2025/08/23,20:46,taxi,50.24
-2025/08/06,16:47,"i buy a pizza","200,00"
-2025/08/06,16:47,"i buy a pizza",200
-2025/08/31,20:59,"i buy a snickers",-400
-2025/08/03,18:00,"I ate in macdo",-50
-2025/08/16,20:00,taxi,40.25
-2025/08/06,17:10,"i buy a pizza",-100
-2025/08/06,17:11,"i buy a snickers",-522.26
-2025/08/06,17:12,taxi,100.25
-2025/08/06,17:14,"i buy a Tacos",-500.47
-2025/08/07,07:43,taxi,50
-2025/08/07,10:46,sggffs,-1000
-2025/08/17,10:44,"i buy a snickers",500.578
+index,date,time,description,amount1,2025/08/29,05:02,parisiane,100
+1,2025/08/29,07:12,kara,-20
+2,2025/08/22,08:20,paypal,1000

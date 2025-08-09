@@ -23,9 +23,10 @@ function getTransactions($fileName, ?callable $transactionsHandler = null) : arr
 }
 
 function extractTransactionFromCsvLine(array $transaction) : array {
-    [$date, $time, $description, $amount] = $transaction;
+    [$id, $date, $time, $description, $amount] = $transaction;
 
     return [
+        'id' => $id,
         'date' => $date,
         'time' => $time,
         'description' => $description,
