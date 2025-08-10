@@ -56,6 +56,10 @@ function calculateTotalsAndBalance($transactions) : array{
 
 function formatTransaction(array $postTransaction) : array {
     $formattedTransaction = [];
+    // format id
+    if (array_key_exists('id', $postTransaction)) {
+        $formattedTransaction['id'] = $postTransaction['id'];
+    }
 
     /// format date and time
     $formattedTransaction['date'] = str_replace('-', '/', substr($postTransaction['date-time'], 0, 10));
@@ -77,5 +81,49 @@ function formatTransaction(array $postTransaction) : array {
 function storeTransaction(array $transaction, string $db_file) {
     $file = fopen($db_file, 'a');
     fputcsv($file, $transaction);
+    fclose($file);
+}
+
+function getTransactionToEdit(array $transactions, string $transactionId) : array|null {
+    foreach ($transactions as $transaction) {
+        if (strcmp($transaction['id'], $transactionId) === 0) {
+            $transactionToEdit = $transaction;
+            break;
+        }
+    }
+
+    if (isset($transactionToEdit)) {
+        return $transactionToEdit;
+    } else {
+        return null;
+    }
+}
+
+function updateTransactions(array &$transactions, array $editedTransaction){
+    foreach ($transactions as $key => $transaction) {
+        if (strcmp($transaction['id'], $editedTransaction['id']) === 0) {
+            $transactions[$key] = $editedTransaction;
+            break;
+        }
+    }
+}
+unset($transaction);
+
+function deleteTransaction(array &$transactions, string $transactionId){
+    foreach ($transactions as $key => $transaction) {
+        if (strcmp($transaction['id'], $transactionId) === 0) {
+            unset($transactions[$key]);
+            break;
+        }
+    }
+}
+unset($transaction);
+
+function storeAllTransactions(array $transactions, string $db_file) {
+    $file = fopen($db_file, 'w');
+    fputcsv($file, ['date', 'time', 'description', 'amount']);
+    foreach ($transactions as $transaction) {
+        fputcsv($file, $transaction);
+    }
     fclose($file);
 }

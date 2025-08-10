@@ -46,6 +46,42 @@ td {
     height: 40px;
 }
 
+td > .edit-button input[type=submit] {
+    border: none;
+    color: white;
+    background-color: #26A69A;
+    width: 60px;
+    height: 30px;
+    border-radius: 12px;
+    font-weight: bold;
+    font-size: 14px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+td > .edit-button input[type=submit]:hover {
+    cursor: pointer;
+}
+
+td > .delete-button input[type=submit] {
+    border: none;
+    color: white;
+    background-color: #f84141;
+    width: 60px;
+    height: 30px;
+    border-radius: 12px;
+    font-weight: bold;
+    font-size: 14px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+td > .delete-button input[type=submit]:hover {
+    cursor: pointer;
+}
+
 aside {
     grid-area: sidebar;
     margin: 10px 0px;

@@ -15,10 +15,12 @@
             <table>
                 <thead>
                     <tr>
-                        <th>Date</td>
-                        <th>Description</td>
-                        <th>Income</td>
-                        <th>Expenses</td>
+                        <th>Date</th>
+                        <th>Description</th>
+                        <th>Income</th>
+                        <th>Expenses</th>
+                        <th>Edit</th>
+                        <th>Delete</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -41,6 +43,22 @@
                                     </div>
                                 </td>
                             <?php endif ?>
+                            <td>
+                                <div class="edit-button">
+                                    <form action="./edit_transaction.php">
+                                        <input type="hidden" name="id" value="<?=$transaction['id']?>">
+                                        <input type="submit" value="Edit">
+                                    </form>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="delete-button">
+                                    <form action="./delete_transaction.php">
+                                        <input type="hidden" name="id" value="<?=$transaction['id']?>">
+                                        <input type="submit" value="delete">
+                                    </form>
+                                </div>
+                            </td>
                         </tr>
                     <?php endforeach?>
                 </tbody>
