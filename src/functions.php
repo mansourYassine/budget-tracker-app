@@ -78,12 +78,6 @@ function formatTransaction(array $postTransaction) : array {
     return $formattedTransaction;
 }
 
-function storeTransaction(array $transaction, string $db_file) {
-    $file = fopen($db_file, 'a');
-    fputcsv($file, $transaction);
-    fclose($file);
-}
-
 function getTransactionToEdit(array $transactions, string $transactionId) : array|null {
     foreach ($transactions as $transaction) {
         if (strcmp($transaction['id'], $transactionId) === 0) {
@@ -121,7 +115,7 @@ unset($transaction);
 
 function storeAllTransactions(array $transactions, string $db_file) {
     $file = fopen($db_file, 'w');
-    fputcsv($file, ['date', 'time', 'description', 'amount']);
+    fputcsv($file, ['id', 'date', 'time', 'description', 'amount']);
     foreach ($transactions as $transaction) {
         fputcsv($file, $transaction);
     }

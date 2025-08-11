@@ -38,7 +38,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $formattedTransaction = ['id' => $lastElementId + 1] + $formattedTransaction;
     }
 
-    storeTransaction($formattedTransaction, DATA_PATH . 'transactions.csv');
+    array_push($transactions, $formattedTransaction);
+
+    storeAllTransactions($transactions, DATA_PATH . 'transactions.csv');
     
     header("Location: add_transaction.php");
     exit();
