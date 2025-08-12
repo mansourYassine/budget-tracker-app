@@ -19,13 +19,15 @@ foreach ($files as $file) {
 $openEditURI = '/php_projects/budget-tracker-app/edit_transaction.php?id=';
 $postForm = '/php_projects/budget-tracker-app/edit_transaction.php';
 
-if (strcmp(substr($_SERVER['REQUEST_URI'], 0, -1), $openEditURI) === 0) {
+$uri = parse_url($_SERVER['REQUEST_URI']);
+
+if ($uri['path'] === '/edit_transaction.php' && isset($uri['query'])) {
     $transactionId = $_GET['id'];
     $transactionToEdit = getTransactionToEdit($transactions, $transactionId);
     require VIEWS_PATH . 'edit_transaction.view.php';
 }
 
-if (strcmp($_SERVER['REQUEST_URI'], $postForm) === 0) {
+if ($uri['path'] === '/edit_transaction.php' && !isset($uri['query'])) {
     $editedTransaction = formatTransaction($_POST);
     updateTransactions($transactions, $editedTransaction);
     storeAllTransactions($transactions, DATA_PATH . 'transactions.csv');
