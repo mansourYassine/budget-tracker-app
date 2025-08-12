@@ -8,9 +8,10 @@
     height: 100vh;
     display: grid;
     grid-template-columns: repeat(10, 1fr);
-    grid-template-rows: 100px 1fr 100px;
+    grid-template-rows: 100px 40px 1fr 100px;
     grid-template-areas:
         "header header header header header header header header header header"
+        "nav nav nav nav nav nav nav nav nav nav"
         "main main main main main main main sidebar sidebar sidebar"
         "footer footer footer footer footer footer footer footer footer footer";
 }
