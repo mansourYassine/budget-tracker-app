@@ -19,6 +19,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
     storeAllTransactions($transactions, DATA_PATH . 'transactions.csv');
     
-    header("Location: add_transaction.php");
+    header("Location: add");
     exit();
 }

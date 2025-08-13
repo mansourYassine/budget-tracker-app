@@ -12,7 +12,7 @@
     
         <main>
             <h1>Edit Page :</h1>
-            <form action="edit_transaction.php" method="post">
+            <form action="edit" method="post">
                 <input type="hidden" name="id" value="<?=$transactionToEdit['id']?>">
                 <div class="transaction-type">
                     <span>Transaction type :</span>

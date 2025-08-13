@@ -13,7 +13,7 @@
         <?php require(VIEWS_PATH . 'partials/nav.php') ?>    
         <main>
             <h1>Transaction Informations :</h1>
-            <form action="add_transaction.php" method="post">
+            <form action="add" method="post">
                 <div class="transaction-type">
                     <span>Transaction type :</span>
                     <div>

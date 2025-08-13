@@ -2,7 +2,6 @@
 
 declare(strict_types = 1);
 
-
 if (isset($uri['query'])) {// before edit
     $transactionId = $_GET['id'];
     $transactionToEdit = getTransactionToEdit($transactions, $transactionId);
