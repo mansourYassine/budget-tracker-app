@@ -45,7 +45,7 @@
                             <?php endif ?>
                             <td>
                                 <div class="edit-button">
-                                    <form action="/index.php/edit">
+                                    <form action="/edit">
                                         <input type="hidden" name="id" value="<?=$transaction['id']?>">
                                         <input type="submit" value="Edit">
                                     </form>
@@ -53,7 +53,7 @@
                             </td>
                             <td>
                                 <div class="delete-button">
-                                    <form action="/index.php/delete">
+                                    <form action="/delete">
                                         <input type="hidden" name="id" value="<?=$transaction['id']?>">
                                         <input type="submit" value="delete">
                                     </form>

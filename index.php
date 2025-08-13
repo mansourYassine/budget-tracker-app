@@ -23,12 +23,12 @@ $uri = parse_url($_SERVER['REQUEST_URI']);
 if ($uri['path'] === '/') {
     require 'controllers/all_transactions.php';
 
-} elseif ($uri['path'] === '/index.php/add') {
+} elseif ($uri['path'] === '/add') {
     require 'controllers/add_transaction.php';
 
-} elseif ($uri['path'] === '/index.php/edit') {
+} elseif ($uri['path'] === '/edit') {
     require 'controllers/edit_transaction.php';
-    
-} elseif ($uri['path'] === '/index.php/delete') {
+
+} elseif ($uri['path'] === '/delete') {
     require 'controllers/delete_transaction.php';
 }

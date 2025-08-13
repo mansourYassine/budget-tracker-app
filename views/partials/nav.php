@@ -4,7 +4,7 @@
             <a href="/">All Transactions</a>
         </li>
         <li>
-            <a href="/index.php/add">Add Transaction</a>
+            <a href="/add">Add Transaction</a>
         </li>
     </ul>
 </nav>
