@@ -1,10 +1,10 @@
 <nav>
     <ul>
         <li>
-            <a href="/">All Transactions</a>
+            <a href="/index.php/all_transactions.php">All Transactions</a>
         </li>
         <li>
-            <a href="/add_transaction.php">Add Transaction</a>
+            <a href="/index.php/add_transaction.php">Add Transaction</a>
         </li>
     </ul>
 </nav>

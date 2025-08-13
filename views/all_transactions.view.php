@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-    <link rel="stylesheet" href="views/styles/all_style.css">
+    <link rel="stylesheet" href="../views/styles/all_style.css">
     <title>All transactions</title>
 </head>
 
@@ -45,7 +45,7 @@
                             <?php endif ?>
                             <td>
                                 <div class="edit-button">
-                                    <form action="./edit_transaction.php">
+                                    <form action="/index.php/edit_transaction.php">
                                         <input type="hidden" name="id" value="<?=$transaction['id']?>">
                                         <input type="submit" value="Edit">
                                     </form>
@@ -53,7 +53,7 @@
                             </td>
                             <td>
                                 <div class="delete-button">
-                                    <form action="./delete_transaction.php">
+                                    <form action="/index.php/delete_transaction.php">
                                         <input type="hidden" name="id" value="<?=$transaction['id']?>">
                                         <input type="submit" value="delete">
                                     </form>

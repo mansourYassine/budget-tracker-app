@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-    <link rel="stylesheet" href="views/styles/add_style.css">
+    <link rel="stylesheet" href="../views/styles/add_style.css">
     <title>Add transaction</title>
 </head>
 

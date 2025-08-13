@@ -1,7 +1,7 @@
 <header>
     <div class="logo">
         <h2>
-            <a href="all_transactions.php">Budget Tracker</a>
+            <a href="/index.php/all_transactions.php">Budget Tracker</a>
         </h2>
     </div>
 </header>

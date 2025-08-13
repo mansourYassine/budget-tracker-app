@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-    <link rel="stylesheet" href="views/styles/edit_style.css">
+    <link rel="stylesheet" href="../views/styles/edit_style.css">
     <title>Edit transaction</title>
 </head>
 
@@ -11,7 +11,7 @@
         <?php require(VIEWS_PATH . 'partials/header.php') ?>
     
         <main>
-            <h1>Transaction Informations :</h1>
+            <h1>Edit Page :</h1>
             <form action="edit_transaction.php" method="post">
                 <input type="hidden" name="id" value="<?=$transactionToEdit['id']?>">
                 <div class="transaction-type">
