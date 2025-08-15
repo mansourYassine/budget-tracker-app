@@ -20,15 +20,15 @@ $calculations = calculateTotalsAndBalance($transactions);
 
 $uri = parse_url($_SERVER['REQUEST_URI']);
 
-if ($uri['path'] === '/') {
-    require 'controllers/all_transactions.php';
+$routes = [
+    '/' => 'controllers/all_transactions.php',
+    '/add' => 'controllers/add_transaction.php',
+    '/edit' => 'controllers/edit_transaction.php',
+    '/delete' => 'controllers/delete_transaction.php',
+];
 
-} elseif ($uri['path'] === '/add') {
-    require 'controllers/add_transaction.php';
-
-} elseif ($uri['path'] === '/edit') {
-    require 'controllers/edit_transaction.php';
-
-} elseif ($uri['path'] === '/delete') {
-    require 'controllers/delete_transaction.php';
+if (array_key_exists($uri['path'], $routes)) {
+    require $routes[$uri['path']];
+} else {
+    abort();
 }

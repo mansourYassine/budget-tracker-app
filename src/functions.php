@@ -8,6 +8,11 @@ function dd($value) {
     die();
 }
 
+function abort() {
+    http_response_code(404);
+    require VIEWS_PATH . '404.php';
+}
+
 function getFiles(string $filesPath) : array {
     $files = [];
     foreach (scandir($filesPath) as $file) {
