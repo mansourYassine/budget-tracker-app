@@ -45,18 +45,12 @@
                             <?php endif ?>
                             <td>
                                 <div class="edit-button">
-                                    <form action="/edit">
-                                        <input type="hidden" name="id" value="<?=$transaction['id']?>">
-                                        <input type="submit" value="Edit">
-                                    </form>
+                                    <a href="/edit?id=<?=$transaction['id']?>">Edit</a>
                                 </div>
                             </td>
                             <td>
                                 <div class="delete-button">
-                                    <form action="/delete">
-                                        <input type="hidden" name="id" value="<?=$transaction['id']?>">
-                                        <input type="submit" value="delete">
-                                    </form>
+                                    <a href="/delete?id=<?=$transaction['id']?>">Delete</a>
                                 </div>
                             </td>
                         </tr>

@@ -47,8 +47,9 @@ td {
     height: 40px;
 }
 
-td > .edit-button input[type=submit] {
+td > .edit-button a {
     border: none;
+    text-decoration: none;
     color: white;
     background-color: #26A69A;
     width: 60px;
@@ -61,12 +62,13 @@ td > .edit-button input[type=submit] {
     align-items: center;
 }
 
-td > .edit-button input[type=submit]:hover {
+td > .edit-button a:hover {
     cursor: pointer;
 }
 
-td > .delete-button input[type=submit] {
+td > .delete-button a {
     border: none;
+    text-decoration: none;
     color: white;
     background-color: #f84141;
     width: 60px;
@@ -79,7 +81,7 @@ td > .delete-button input[type=submit] {
     align-items: center;
 }
 
-td > .delete-button input[type=submit]:hover {
+td > .delete-button a:hover {
     cursor: pointer;
 }
 
