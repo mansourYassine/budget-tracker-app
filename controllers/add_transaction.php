@@ -7,18 +7,13 @@ require VIEWS_PATH . 'add_transaction.view.php';
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $formattedTransaction = formatTransaction($_POST);
 
-    // add id of the transaction
-    if (count($transactions) === 0) {
-        $formattedTransaction = ['id' => 1] + $formattedTransaction;
-    } else {
-        $lastElementId = intval($transactions[array_key_last($transactions)]['id']);
-        $formattedTransaction = ['id' => $lastElementId + 1] + $formattedTransaction;
-    }
-
-    array_push($transactions, $formattedTransaction);
-
-    storeAllTransactions($transactions, DATA_PATH . 'transactions.csv');
-    
-    header("Location: add");
+    $connect = mysqli_connect('localhost', 'yassine', 'test1234', 'budget_tracker_db');
+    $sql = "
+        INSERT INTO transactions(date,time,description,amount) 
+        VALUES('{$formattedTransaction['date']}', '{$formattedTransaction['time']}', '{$formattedTransaction['description']}', '{$formattedTransaction['amount']}')
+    ";
+    mysqli_query($connect, $sql);
+    mysqli_close($connect);
+    header("Location: /");
     exit();
 }

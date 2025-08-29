@@ -28,10 +28,10 @@
                         <tr>
                             <td><?= $transaction['date'] . ' ' . $transaction['time']?></td>
                             <td><?= $transaction['description'] ?></td>
-                            <?php if ($transaction['amount'] >= 0) :?>
+                            <?php if ((float)$transaction['amount'] >= 0) :?>
                                 <td>
                                     <div style="color: green">
-                                        <?= number_format($transaction['amount'], 2, '.', ',') ?> DH
+                                        <?= number_format((float)$transaction['amount'], 2, '.', ',') ?> DH
                                     </div>
                                 </td>
                                 <td></td>
@@ -39,7 +39,7 @@
                                 <td></td>
                                 <td>
                                     <div style="color: red">
-                                        <?= number_format($transaction['amount'], 2, '.', ',') ?> DH
+                                        <?= number_format((float)$transaction['amount'], 2, '.', ',') ?> DH
                                     </div>
                                 </td>
                             <?php endif ?>

@@ -54,12 +54,12 @@ function calculateTotalsAndBalance($transactions) : array{
     ];
 
     foreach ($transactions as $transaction) {
-        $calculations['balance'] += round($transaction['amount'], 2);
+        $calculations['balance'] += round((float)$transaction['amount'], 2);
 
-        if ($transaction['amount'] >= 0) {
-            $calculations['totalIncome'] += round($transaction['amount'], 2);
+        if ((float)$transaction['amount'] >= 0) {
+            $calculations['totalIncome'] += round((float)$transaction['amount'], 2);
         } else {
-            $calculations['totalExpenses'] += round($transaction['amount'], 2);
+            $calculations['totalExpenses'] += round((float)$transaction['amount'], 2);
         }
     }
 
