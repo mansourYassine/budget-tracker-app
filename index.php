@@ -10,11 +10,13 @@ define('VIEWS_PATH' , $root . 'views' . DIRECTORY_SEPARATOR);
 require (APP_PATH . 'functions.php');
 
 $files = getFiles(DATA_PATH);
-
-$transactions = [];
-foreach ($files as $file) {
-    $transactions = array_merge($transactions, getTransactions($file, 'extractTransactionFromCsvLine'));
-}
+// getting transactions from the database
+$connect = mysqli_connect('localhost', 'yassine', 'test1234', 'budget_tracker_db');
+$sql = "SELECT * FROM transactions";
+$result = mysqli_query($connect, $sql);
+$transactions = mysqli_fetch_all($result, MYSQLI_ASSOC);
+mysqli_free_result($result);
+mysqli_close($connect);
 
 $calculations = calculateTotalsAndBalance($transactions);
 
