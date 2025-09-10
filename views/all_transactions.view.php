@@ -62,5 +62,6 @@
         <?php require(VIEWS_PATH . 'partials/sidebar.php') ?>
         <?php require(VIEWS_PATH . 'partials/footer.php') ?>
     </div>
+    <script src="../node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
