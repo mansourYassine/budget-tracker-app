@@ -21,5 +21,6 @@ if (isset($uri['query'])) {// before edit
 
     mysqli_query($connect, $sql);
     mysqli_close($connect);
-    require VIEWS_PATH . 'success_edit.view.php';
+    header('Location: /');
+    // require VIEWS_PATH . 'success_edit.view.php';
 }

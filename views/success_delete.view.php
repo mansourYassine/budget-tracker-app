@@ -7,16 +7,13 @@
     <title>Delete transaction</title>
 </head>
 
-<body>
-    <div class="container">
-
-        <?php require(VIEWS_PATH . 'partials/header.php') ?>
-        <main>
+<body class="d-flex flex-column min-vh-100">
+    <?php require(VIEWS_PATH . 'partials/header.php') ?>
+        <section class="container d-flex flex-column align-items-center mt-5" id="main">
             <h1>Transaction Deleted Successefully</h1>
-            <p>Back to <a href="/">Home page</a></p>
-        </main>
-        <?php require(VIEWS_PATH . 'partials/footer.php') ?>
-    </div>
+            <p class="fs-4">Back to <a class="text-decoration-none" href="/">Home page</a></p>
+        </section>
+    <?php require(VIEWS_PATH . 'partials/footer.php') ?>
     <script src="../node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
