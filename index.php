@@ -4,7 +4,7 @@ declare(strict_types = 1);
 
 $root = dirname(__FILE__) . DIRECTORY_SEPARATOR;
 define('APP_PATH' , $root . 'src' . DIRECTORY_SEPARATOR);
-define('DATA_PATH' , $root . 'ressources' . DIRECTORY_SEPARATOR);
+define('MODELS_PATH' , $root . 'models' . DIRECTORY_SEPARATOR);
 define('VIEWS_PATH' , $root . 'views' . DIRECTORY_SEPARATOR);
 
 require (APP_PATH . 'functions.php');

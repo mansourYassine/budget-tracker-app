@@ -3,15 +3,7 @@
 declare(strict_types = 1);
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    $formattedTransaction = formatTransaction($_POST);
-
-    $connect = mysqli_connect('localhost', 'yassine', 'test1234', 'budget_tracker_db');
-    $sql = "
-        INSERT INTO transactions(date,time,description,amount) 
-        VALUES('{$formattedTransaction['date']}', '{$formattedTransaction['time']}', '{$formattedTransaction['description']}', '{$formattedTransaction['amount']}')
-    ";
-    mysqli_query($connect, $sql);
-    mysqli_close($connect);
+    require MODELS_PATH . 'add_transaction.model.php';
     header('Location: /');
     exit();
 } else {
