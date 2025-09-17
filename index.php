@@ -9,7 +9,6 @@ define('VIEWS_PATH' , $root . 'views' . DIRECTORY_SEPARATOR);
 
 require (APP_PATH . 'functions.php');
 
-$files = getFiles(DATA_PATH);
 // getting transactions from the database
 $connect = mysqli_connect('localhost', 'yassine', 'test1234', 'budget_tracker_db');
 $sql = "SELECT * FROM transactions";
