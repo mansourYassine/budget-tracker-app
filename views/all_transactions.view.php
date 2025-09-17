@@ -23,7 +23,7 @@
                                 </tr>
                             </thead>
                             <tbody>
-                                <?php foreach ($transactions as $transaction) :?>
+                                <?php foreach (array_reverse($transactions) as $transaction) :?>
                                     <tr>
                                         <td><?= $transaction['date'] . ' ' . $transaction['time']?></td>
                                         <td><?= $transaction['description'] ?></td>
