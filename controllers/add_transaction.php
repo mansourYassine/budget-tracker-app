@@ -2,8 +2,6 @@
 
 declare(strict_types = 1);
 
-require VIEWS_PATH . 'add_transaction.view.php';
-
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $formattedTransaction = formatTransaction($_POST);
 
@@ -14,4 +12,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     ";
     mysqli_query($connect, $sql);
     mysqli_close($connect);
+    header('Location: /');
+    exit();
+} else {
+    require VIEWS_PATH . 'add_transaction.view.php';
 }
